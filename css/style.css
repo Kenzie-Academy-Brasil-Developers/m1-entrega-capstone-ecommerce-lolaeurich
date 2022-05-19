@@ -5,14 +5,14 @@
 }
 
 body {
-      background-image: url("../img/background.jpg");
+      background-image: url("../img/background2.jpg");
 }
-  
 
   /*cabeçalho do site*/
 .menu {
     height: 70px;
-    background-color: wheat;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     font-family: Roboto;
     display: flex;
     width: auto;
@@ -22,41 +22,46 @@ body {
 .menu h1 {
     font-size: 28px;
     text-align: center;
-    margin-left: 110px;
-    padding: 20.5px 12.5px 17.5px;
+    margin-left: 80px;
+    padding: 12.5px 12.5px 17.5px;
     color: black;
     width: 290px;
+    overflow: hidden;
 }
+
+.menu img {
+    margin-top: 0;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;    
+}
+
+.menu img:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.5);
+ }
   
 .menu ul {
-    margin: 5px;
+    margin: 14px;
+    margin-left: 140px;
+    cursor: pointer;
 }
   
 .menu ul li {
     display: inline-block;
-    width: 130px;
+    width: 103px;
     padding: 0px 0px;
     line-height: 27px;
     padding: 0;
     position: relative;
-}
-  
-.menu ul li a {
-    text-align: right;
-    font-size: 20px;
-    font-weight: 800;
     color: black;
-
+    font-size: larger;
+    font-weight: 800;
+    text-decoration: underline 2px;
 }
-.menu a {
-    padding: 12.5px;
-    display: block;
-}
-
   
 /*Esse hover peguei em um banco free na internet*/
 
-.menu a:hover {
+.menu li:hover {
         box-shadow: inset 0 0 0 0 #54b3d6;
         color: #54b3d6;
         margin: 0 -.25rem;
@@ -64,8 +69,28 @@ body {
         transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
-.todos {
-    font-weight: 600;
+.menu li + li:hover {
+    box-shadow: inset 0 0 0 0 green;
+    color: green;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.menu li + li + li:hover {
+    box-shadow: inset 0 0 0 0 violet;
+    color: violet;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.menu li + li + li + li:hover {
+    box-shadow: inset 0 0 0 0 blue;
+    color: blue;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .produtos {
@@ -96,7 +121,7 @@ body {
     width: 30%;
     min-width: 220px;
     height: 450px;
-    border: 5px solid black;
+    border: 2px solid black;
     border-radius: 20px;
     margin-bottom: 20px;
 }
@@ -104,7 +129,7 @@ body {
 
 /*ideia de hover retirada da internet*/
 .cardProduct:hover {
-  background: #ffcf4d;
+  background: #87CEFA;
   border: 5px solid rgba(255, 0, 88, 0.4);
   box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
@@ -119,7 +144,7 @@ body {
 }
 
 .imagem img {
-    height: 150px;
+    height: 178px;
     width: 230px;
 }
 
@@ -130,13 +155,22 @@ body {
     justify-content: space-between;
     padding: 105px 10px 17px 15px;
     padding-top: 10%;
-    background-color: rgba(255, 0, 88, 0.4);
+    background-color: #DB7093;
     border-radius: 10px;
 }
 
 .informacoes h3 {
     size: 10px;
-    text-decoration: underline;
+    text-align: start;
+    pad: 0 0 20px 0 ;
+    height: 75px;
+}
+
+.informacoes p {
+    font-size: 15px;
+    padding: 3px 5px;
+    margin: 5px 0px 10px -3px;
+  
 }
 
 .informacoes h4 {
@@ -156,7 +190,7 @@ body {
     padding: 5px 6px;
     width: 78px;
     height: 10px;
-    background: rgba(255, 0, 88);
+    background: wheat;
     border-radius: 10px;
     font-weight: 600;
 }
@@ -176,14 +210,17 @@ body {
 aside {
     max-width: 300px;
     width: 300px;
+    position:absolute;
+        top: 125px;
+        right: 0;
 }
 
 .pesquisa {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 50px;
-    margin-bottom: 30px;
+    height: 25px;
+    margin-bottom: 35px;
 }
 
 .pesquisa input {
@@ -206,49 +243,98 @@ aside {
 
 /*mesmo hover usado anteriormente nos cards*/
 .pesquisa button:hover {
-    background: #ffcf4d;
+    background: #87CEFA;
     border: 2px solid;
     box-shadow: 0 1px 15px rgba(1, 1, 1, 0.2);
 }
 
-.carrinho-de-produtos h2 {
-    background: #ffcf4d;
-    text-align: center;
+.nomeDoCarrinho {
+    background: #87CEFA;
+    display: flex;
+    justify-content: center;
     color: black;
     height: 34px;
-    width: 250px;
+    width: 268px;
     padding: 10px;
-    border-radius: 10px;
-}
-.carrinho-de-produtos div {
-    display: flex;
-    flex-direction: column;
-    border-style: dashed;
-    height: 314px;
-    background: rgba(255, 0, 88, 0.4);
-    border-radius: 15px;
-    align-items: center;
-    justify-content: center;
-}
-
-.quantidade {
-    background: #ffcf4d;
-    align-items: left;
-    color: black;
-    height: 30px;
-    padding: 10px;
-    border-top: 50px;
     border-radius: 10px;
     
 }
+.carrinho-de-produtos {
+    flex-direction: column;
+    border-style: dashed;
+    height: 370px;
+    background: rgba(255, 0, 88, 0.4);
+    border-radius: 15px;
+    align-items: flex-start;
+    justify-content: space-around;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+.carrinho-de-compras scroll-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 5em;
+}
+
+.adicionados {
+    background-color: white;
+    list-style: none;
+    width: 238px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    padding: 1px 9px 0 0;
+    justify-content: space-around;
+    border: 1px solid black;
+}
+
+.adicionados img {
+    height: 73px;
+    width: 68px;
+    border-radius: 50px;
+    margin: -1px 0 0 -3px ;
+}
+.adicionados h3 {
+    font-size: medium ;
+    margin: 6px 10px -31px -9px;
+    color: black;
+    font-weight: 800;
+}
+.adicionados h4 {
+    font-size: medium;
+    color: #800000;
+    font-weight: 800;
+    margin: 47px 24px 12px -105px;
+}
+
+.botao-remover {
+    width: 65px;
+    height: 35px;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 160px;
+}
+
+#quantidade {
+    align-items: left;
+    justify-content: left;
+    height: 24px;
+    padding: 5px;
+    border-top: 50px;
+    background-color: #87CEFA;
+    border-radius: 10px;
+}
 
 .total {
-    background: #ffcf4d;
+    background: #87CEFA;
     border-style: dashed;
     text-align: left;
     color: black;
     font-weight: 900;
-    height: 20px;
-    padding: 10px;
+    height: 25px;
+    padding: 1px 0 0 5;
     border-radius: 10px;
 }
